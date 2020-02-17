@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0/EN "
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
+        >
+<mapper namespace="com.sl.dao.EasybuyUserMapper">
+    <select id="queryUser" parameterType="String" resultType="easybuyUser">
+        select * from easybuy.easybuy_user where loginName=#{loginName};
+    </select>
+    <!--插入标签-->
+    <insert id="addUser"  parameterType="easybuyUser" >
+        <selectKey resultType="int" keyProperty="id" keyColumn="id" order="AFTER">
+        </selectKey>
+        insert into easybuy_user value(#{id},#{loginName},#{userName},#{password},#{sex},#{identityCode},#{email},#{mobile},#{type});
+    </insert>
+</mapper>
