@@ -5,6 +5,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-public interface EasybuyProductCategoryMapper{
+public interface EasybuyProductCategoryMapper {
     List<EasybuyProductCategory> queryAllBuyType(@Param("type") int type);
 }

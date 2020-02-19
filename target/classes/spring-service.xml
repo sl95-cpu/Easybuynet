@@ -18,7 +18,7 @@
         <property name="newMapper" ref="easybuyNewMapper"/>
      </bean>
     <bean id="EasybuyProductCategoryServiceImpl" class="com.sl.service.EasybuyProductCategoryServiceImpl">
-        <property name="easybuyProductCategoryMapeer" ref="easybuyProductCategoryMapper"/>
+        <property name="easybuyProductCategoryMapper" ref="easybuyProductCategoryMapper"/>
     </bean>
 
     <!--3.声明式事务-->

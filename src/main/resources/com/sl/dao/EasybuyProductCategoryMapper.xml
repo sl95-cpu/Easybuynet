@@ -3,7 +3,7 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0/EN "
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd"
         >
-<mapper namespace="com.sl.dao.EasybuyProductCategoryMapeer">
+<mapper namespace="com.sl.dao.EasybuyProductCategoryMapper">
     <select id="queryAllBuyType" resultType="easybuyProductCategory" parameterType="int">
         select * from easybuy.easybuy_product_category where type=#{type};
     </select>
