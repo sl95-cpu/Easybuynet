@@ -5,7 +5,7 @@ import com.sl.pojo.EasybuyUser;
 import org.springframework.stereotype.Service;
 
 @Service
-public class EasybuyServiceImpl implements EasybuyService {
+public class EasybuyUserServiceImpl implements EasybuyUserService {
 
     private EasybuyUserMapper userMapper;
 

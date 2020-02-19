@@ -4,7 +4,7 @@ import com.sl.dao.EasybuyUserMapper;
 import com.sl.pojo.EasybuyUser;
 import org.apache.ibatis.annotations.Param;
 
-public interface EasybuyService {
+public interface EasybuyUserService {
 
     int addUser(EasybuyUser user);
 

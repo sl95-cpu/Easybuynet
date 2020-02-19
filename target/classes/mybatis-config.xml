@@ -14,5 +14,6 @@
         <mappers>
             <mapper class="com.sl.dao.EasybuyUserMapper"/>
             <mapper class="com.sl.dao.EasybuyNewMapper"/>
+            <mapper class="com.sl.dao.EasybuyProductCategoryMapper"/>
         </mappers>
 </configuration>

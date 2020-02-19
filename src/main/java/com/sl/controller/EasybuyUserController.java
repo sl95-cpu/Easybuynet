@@ -1,13 +1,12 @@
 package com.sl.controller;
 
 import com.sl.pojo.EasybuyUser;
-import com.sl.service.EasybuyService;
+import com.sl.service.EasybuyUserService;
 import com.sl.util.MD5;
 import net.sf.json.JSONObject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -22,7 +21,7 @@ public class EasybuyUserController {
     // controller 掉service层
     @Autowired
     @Qualifier("EasybuyServiceImpl")
-    private EasybuyService easybuyService;
+    private EasybuyUserService easybuyUserService;
     @RequestMapping("/toLogin")
     public String toLogin(){
         return "Login";
@@ -39,7 +38,7 @@ public class EasybuyUserController {
 
     @RequestMapping("/Login")
     public void login(@RequestParam("loginName") String loginName, @RequestParam("password") String password, HttpServletResponse response, HttpServletRequest request) throws IOException {
-        EasybuyUser user1 = easybuyService.queryUser(loginName);
+        EasybuyUser user1 = easybuyUserService.queryUser(loginName);
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         if (user1!=null){
@@ -59,7 +58,7 @@ public class EasybuyUserController {
     @RequestMapping("/addUser")
     public void addUser(EasybuyUser user, HttpServletResponse response) throws IOException {
         user.setPassword(MD5.string2MD5(user.getPassword().trim()));
-      int num  = easybuyService.addUser(user);
+      int num  = easybuyUserService.addUser(user);
         PrintWriter out = response.getWriter();
         JSONObject json = new JSONObject();
         if (num>0){

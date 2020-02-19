@@ -11,12 +11,16 @@
     <context:component-scan base-package="com.sl.service"/>
 
     <!--2.将我们的所有业务类注入到spring,可以通过配置-->
-    <bean id="EasybuyServiceImpl" class="com.sl.service.EasybuyServiceImpl">
+    <bean id="EasybuyServiceImpl" class="com.sl.service.EasybuyUserServiceImpl">
      <property name="userMapper"  ref="easybuyUserMapper"/>
     </bean>
     <bean id="EasybuyNewServiceImpl" class="com.sl.service.EasybuyNewServiceImpl">
         <property name="newMapper" ref="easybuyNewMapper"/>
      </bean>
+    <bean id="EasybuyProductCategoryServiceImpl" class="com.sl.service.EasybuyProductCategoryServiceImpl">
+        <property name="easybuyProductCategoryMapeer" ref="easybuyProductCategoryMapper"/>
+    </bean>
+
     <!--3.声明式事务-->
     <bean id="transactionManage" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <!--注入数据源-->

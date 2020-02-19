@@ -23,10 +23,9 @@ public class EasybuyNewController {
 
     @RequestMapping("/allnew")
     public void allNew(HttpServletResponse response) throws IOException {
-
         response.setCharacterEncoding("utf-8");
         response.setContentType("text/html;charset=UTF-8");
-    List<EasybuyNews> list = newService.queryAllEasybuyNews();
+        List<EasybuyNews> list = newService.queryAllEasybuyNews();
         System.out.println(list);
         PrintWriter out  = response.getWriter();
         JSONObject json =new JSONObject();
